@@ -110,6 +110,53 @@ const gameState = {
     gamepadSelectedChoiceIndex: -1
 };
 
+// --- STORY DATA STRUCTURE ---
+// The `story` array holds all the scenes for the visual novel. Each scene is an object
+// with several properties that define its content and behavior.
+//
+// Scene Properties:
+//   - `background`: (String) URL of the background image for the scene.
+//   - `text`: (String) The dialogue or narrative text to be displayed.
+//   - `characters`: (Array of Objects) Defines characters present in the scene.
+//     - `name`: (String) Identifier for the character (e.g., "protagonist", "heroine").
+//     - `visible`: (Boolean) Whether the character is visible.
+//     - `emotion`: (String) The emotion state of the character (used to potentially select different sprites).
+//     - `position`: (String) "left", "right", or "center" (though center might need specific CSS).
+//     - `speaking`: (Boolean, optional) If true, might apply a visual highlight.
+//   - `choices`: (Array of Objects or null) Defines player choices for the scene.
+//     - `text`: (String) Text displayed for the choice option.
+//     - `nextScene`: (Integer) Index of the scene to jump to if this choice is selected.
+//     If `choices` is null or an empty array, no choices are displayed.
+//   - `disableNextButton`: (Boolean, optional) Controls visibility of the "Next" button for scenes without choices.
+//     - **Purpose:** Set to `true` to prevent the "Next" button from appearing for scenes
+//       that do not have choices. This is useful for explicitly ending a narrative branch
+//       or a sequence of scenes where automatic progression to the next scene in the array
+//       is not desired.
+//     - **Usage:**
+//       - If a scene has a `choices` array (even if empty, though typically it would have options),
+//         the "Next" button is automatically hidden, and this property has no effect.
+//       - This property primarily affects scenes with no `choices` (or `choices: null`).
+//       - If `disableNextButton: true`, the "Next" button will be hidden.
+//       - If `disableNextButton` is not present, or set to `false` (and the scene has no choices,
+//         and it's not the very last scene of the entire story), the "Next" button will appear.
+//     - **Default Behavior:** If `disableNextButton` is omitted for a scene without choices,
+//       the "Next" button will be shown (unless it's the last scene in the `story` array,
+//       in which case the "Next" button is also hidden by default to prevent errors).
+//     - **Example:**
+//       // {
+//       //   background: "path/to/image.jpg",
+//       //   text: "This is the end of this particular path. You cannot proceed further this way.",
+//       //   characters: [{ name: "protagonist", visible: true }],
+//       //   choices: null, // Or omit the choices property
+//       //   disableNextButton: true // Prevents the 'Next' button from appearing
+//       // },
+//       // {
+//       //   background: "path/to/another.jpg",
+//       //   text: "This scene will show a 'Next' button to go to the scene after it in the array.",
+//       //   characters: [],
+//       //   choices: null // 'Next' button will appear (unless this is the last scene in the story array)
+//       // }
+
 // Sample story data
 const story = [
     {
@@ -205,16 +252,25 @@ function loadScene(sceneIndex) {
     }, 1000);
     
     // Update characters
-    updateCharacters(scene.characters);
+    if (scene.characters) {
+        updateCharacters(scene.characters);
+    } else {
+        updateCharacters([]); // Clear characters if scene doesn't define any
+    }
     
     // Display text
     displayText(scene.text);
     
-    // Show choices if they exist
-    if (scene.choices) {
-        showChoices(scene.choices);
+    // Show choices or next button
+    if (scene.choices && scene.choices.length > 0) {
+        showChoices(scene.choices); // showChoices should hide the nextButton
     } else {
-        hideChoices();
+        hideChoices(); // hideChoices no longer manages nextButton visibility
+        if (scene.disableNextButton === true || sceneIndex === story.length - 1) {
+            elements.nextButton.classList.add('hidden');
+        } else {
+            elements.nextButton.classList.remove('hidden');
+        }
     }
     
     // Update game state
@@ -359,7 +415,7 @@ function hideChoices() {
     }
     gameState.gamepadSelectedChoiceIndex = -1;
     elements.choicesContainer.classList.add('hidden');
-    elements.nextButton.classList.remove('hidden');
+    // elements.nextButton.classList.remove('hidden'); // Next button visibility is now handled by loadScene
 }
 
 // Advance the story
