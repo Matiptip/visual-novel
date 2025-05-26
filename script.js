@@ -113,7 +113,7 @@ const gameState = {
 // Sample story data
 const story = [
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "It was a quiet evening in the small town of Maplewood. The autumn leaves rustled in the gentle breeze as I walked home from school.",
         characters: [
             { name: "protagonist", visible: true, emotion: "neutral", position: "left" }
@@ -121,7 +121,7 @@ const story = [
         choices: null
     },
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "As I turned the corner, I saw her—the new transfer student, standing alone under the old oak tree.",
         characters: [
             { name: "protagonist", visible: true, emotion: "surprised", position: "left" },
@@ -130,7 +130,7 @@ const story = [
         choices: null
     },
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "She looked up and our eyes met. What should I do?",
         characters: [
             { name: "protagonist", visible: true, emotion: "neutral", position: "left" },
@@ -144,7 +144,7 @@ const story = [
     }
           // Scene 3 (Approach path)
     ,   {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "You walk up to her and say hello. She smiles shyly in response.",
         characters: [
             { name: "protagonist", visible: true, emotion: "happy", position: "left" },
@@ -157,7 +157,7 @@ const story = [
     },
     // Scene 4 (Ignore path)
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "You pretend not to see her and keep walking. You notice her expression falls as you pass by.",
         characters: [
             { name: "protagonist", visible: true, emotion: "neutral", position: "left" },
@@ -170,7 +170,7 @@ const story = [
     },
     // Scene 5 (Wave path)
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "You give a small wave from a distance. She waves back hesitantly.",
         characters: [
             { name: "protagonist", visible: true, emotion: "neutral", position: "left" },
@@ -183,7 +183,7 @@ const story = [
     },
     // Scene 6 (Ask about her day)
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "You ask about her day. She seems surprised but pleased by your interest.",
         characters: [
             { name: "protagonist", visible: true, emotion: "happy", position: "left" },
@@ -193,7 +193,7 @@ const story = [
     },
     // Scene 7 (Invite to walk home)
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "She accepts your invitation to walk home together. The conversation flows easily between you.",
         characters: [
             { name: "protagonist", visible: true, emotion: "happy", position: "left" },
@@ -203,7 +203,7 @@ const story = [
     },
     // Scene 8 (Turn back and apologize)
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "You turn back and apologize for ignoring her. She seems touched by your honesty.",
         characters: [
             { name: "protagonist", visible: true, emotion: "apologetic", position: "left" },
@@ -213,7 +213,7 @@ const story = [
     },
     // Scene 9 (Keep walking)
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "You continue walking, but can't shake the feeling you missed an opportunity.",
         characters: [
             { name: "protagonist", visible: true, emotion: "regretful", position: "left" }
@@ -222,7 +222,7 @@ const story = [
     },
     // Scene 10 (Approach after wave)
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "You approach her now that the ice is broken. The conversation starts more naturally this time.",
         characters: [
             { name: "protagonist", visible: true, emotion: "happy", position: "left" },
@@ -232,7 +232,7 @@ const story = [
     },
     // Scene 11 (Continue on your way)
     {
-        background: "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRb3LnHfd7bud9SWnqLFj_BdHc8jwkt8DMXLDzL_Lb-1FU46ohUKb3X9J4PoalJlKq0BskBAMe4OhrtetdFXAk",
+        background: "images/backgrounds/pexels-bri-schneiter-28802-346529.jpg",
         text: "You continue on your separate ways, but exchange one last glance and smile.",
         characters: [
             { name: "protagonist", visible: true, emotion: "neutral", position: "left" },
